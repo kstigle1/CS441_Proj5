@@ -3,6 +3,7 @@ package com.stigler.cs441_proj5;
 import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.graphics.Color;
 import android.media.MediaPlayer;
 import android.os.Build;
 import android.os.Bundle;
@@ -19,9 +20,13 @@ public class MainActivity extends AppCompatActivity
 {
     TextView inputLabel;
     Button stopButton;
+    Button startButton;
+    Button DrunkenLull;
+    Button Metro;
     MediaPlayer mPlayer;
+    int selectedSongMP3 = R.raw.silence;
+    Button selectedSongButton;
 
-    @RequiresApi(api = Build.VERSION_CODES.M)
     @Override
     protected void onCreate(Bundle savedInstanceState)
     {
@@ -30,18 +35,53 @@ public class MainActivity extends AppCompatActivity
 
         inputLabel = (TextView) findViewById(R.id.inputLabel);
         stopButton = (Button) findViewById(R.id.stopButton);
+        startButton = (Button) findViewById(R.id.startButton);
+        selectedSongButton = (Button) findViewById(R.id.DrukenLullbies);
+        DrunkenLull = (Button) findViewById(R.id.DrukenLullbies);
+        Metro = (Button) findViewById(R.id.Metropolis);
 
-
+        mPlayer = MediaPlayer.create(this, selectedSongMP3);
     }
 
     public void startPlaying(View view)
     {
-        mPlayer = MediaPlayer.create(this, R.raw.testsong);
-        mPlayer.start();
+        if (selectedSongMP3 != R.raw.silence)
+        {
+            mPlayer = MediaPlayer.create(this, selectedSongMP3);
+            mPlayer.start();
+        }
+        else
+        {
+            inputLabel.setTextColor(Color.RED);
+        }
     }
 
     public void stopPlaying(View view)
     {
         mPlayer.stop();
+    }
+
+    public void setDL(View view)
+    {
+        mPlayer.stop();
+        selectedSongButton.setBackgroundColor(Color.BLUE);
+        selectedSongButton.setTextColor(Color.WHITE);
+        inputLabel.setTextColor(Color.BLACK);
+        selectedSongMP3 = R.raw.drunkenlullbies;
+        selectedSongButton = DrunkenLull;
+        DrunkenLull.setBackgroundColor(Color.YELLOW);
+        DrunkenLull.setTextColor(Color.BLACK);
+    }
+
+    public void setMetro(View view)
+    {
+        mPlayer.stop();
+        selectedSongButton.setBackgroundColor(Color.BLUE);
+        selectedSongButton.setTextColor(Color.WHITE);
+        inputLabel.setTextColor(Color.BLACK);
+        selectedSongMP3 = R.raw.metropolis;
+        selectedSongButton = Metro;
+        Metro.setBackgroundColor(Color.YELLOW);
+        Metro.setTextColor(Color.BLACK);
     }
 }
