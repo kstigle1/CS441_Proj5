@@ -1,3 +1,7 @@
 <resources>
     <string name="app_name">CS441_Proj5</string>
+    <string name="boxTitle">What should I say?</string>
+    <string name="repeat">Repeat this...</string>
+    <string name="stopPlay">Stop Playing</string>
+    <string name="startPlay">Start Playing</string>
 </resources>
