@@ -6,4 +6,6 @@
     <string name="startPlay">Start Playing</string>
     <string name="songDL">Drunken Lullabies</string>
     <string name="songMetro">Metropolis</string>
+    <string name="songWellerman">Wellerman (Remix)</string>
+    <string name="tempLabel">TBD</string>
 </resources>
