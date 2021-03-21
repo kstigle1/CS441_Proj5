@@ -6,6 +6,8 @@
     <string name="startPlay">Start Playing</string>
     <string name="songDL">Drunken Lullabies</string>
     <string name="songMetro">Metropolis</string>
-    <string name="songWellerman">Wellerman (Remix)</string>
+    <string name="songWAP">WAP</string>
+    <string name="songFamousFriends">Famous Friends</string>
     <string name="tempLabel">TBD</string>
+    <string name="songNGGYU">*Secret Song*</string>
 </resources>

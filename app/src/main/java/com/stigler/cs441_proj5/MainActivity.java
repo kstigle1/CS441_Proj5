@@ -23,7 +23,9 @@ public class MainActivity extends AppCompatActivity
     Button startButton;
     Button DrunkenLull;
     Button Metro;
-    Button Wellerman;
+    Button WAP;
+    Button FamousFriends;
+    Button NGGYU;
     MediaPlayer mPlayer;
     int selectedSongMP3 = R.raw.silence;
     Button selectedSongButton;
@@ -40,7 +42,9 @@ public class MainActivity extends AppCompatActivity
         selectedSongButton = (Button) findViewById(R.id.DrukenLullbies);
         DrunkenLull = (Button) findViewById(R.id.DrukenLullbies);
         Metro = (Button) findViewById(R.id.Metropolis);
-        Wellerman = (Button) findViewById(R.id.Wellerman);
+        WAP = (Button) findViewById(R.id.WAP);
+        FamousFriends = (Button) findViewById(R.id.famousFriends);
+        NGGYU = (Button) findViewById(R.id.NGGYU);
 
         mPlayer = MediaPlayer.create(this, selectedSongMP3);
 
@@ -99,16 +103,16 @@ public class MainActivity extends AppCompatActivity
         Metro.setTextColor(Color.BLACK);
     }
 
-    public void setWellerman(View view)
+    public void setWAP(View view)
     {
         mPlayer.stop();
         selectedSongButton.setBackgroundColor(Color.BLUE);
         selectedSongButton.setTextColor(Color.WHITE);
         inputLabel.setTextColor(Color.BLACK);
-        selectedSongMP3 = R.raw.wellermanremix;
-        selectedSongButton = Wellerman;
-        Wellerman.setBackgroundColor(Color.YELLOW);
-        Wellerman.setTextColor(Color.BLACK);
+        selectedSongMP3 = R.raw.wap;
+        selectedSongButton = WAP;
+        WAP.setBackgroundColor(Color.YELLOW);
+        WAP.setTextColor(Color.BLACK);
     }
 
     public void setTemp(View view)
@@ -118,5 +122,29 @@ public class MainActivity extends AppCompatActivity
         selectedSongButton.setTextColor(Color.WHITE);
         inputLabel.setTextColor(Color.BLACK);
         selectedSongMP3 = R.raw.silence;
+    }
+
+    public void setFF(View view)
+    {
+        mPlayer.stop();
+        selectedSongButton.setBackgroundColor(Color.BLUE);
+        selectedSongButton.setTextColor(Color.WHITE);
+        inputLabel.setTextColor(Color.BLACK);
+        selectedSongMP3 = R.raw.famousfriends;
+        selectedSongButton = FamousFriends;
+        FamousFriends.setBackgroundColor(Color.YELLOW);
+        FamousFriends.setTextColor(Color.BLACK);
+    }
+
+    public void setNGGYU(View view)
+    {
+        mPlayer.stop();
+        selectedSongButton.setBackgroundColor(Color.BLUE);
+        selectedSongButton.setTextColor(Color.WHITE);
+        inputLabel.setTextColor(Color.BLACK);
+        selectedSongMP3 = R.raw.nevergonnagiveyouup;
+        selectedSongButton = NGGYU;
+        NGGYU.setBackgroundColor(Color.YELLOW);
+        NGGYU.setTextColor(Color.BLACK);
     }
 }
